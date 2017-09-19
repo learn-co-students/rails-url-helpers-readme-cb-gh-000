@@ -1,3 +1,23 @@
+<!-- since rails knows to automatically use the ID attribute, you don't need to explicitly pass it in, just the object is fine -->
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
+  <div><%= link_to post.title, post_path(post) %></div>
 <% end %>
+
+<!-- even more improved version (using post_path instead of hardcoding/string interpolation) -->
+<!-- <% @posts.each do |post| %>
+  <div><%= link_to post.title, post_path(post.id) %></div>
+<% end %> -->
+
+<!-- improved version of the code right below (same functionality) -->
+<!-- <% @posts.each do |post| %>
+  <div><%= link_to post.title, "/posts/#{post.id}" %></div>
+<% end %> -->
+
+<!-- new code makes each title a link to the respective post -->
+<!-- <% @posts.each do |post| %>
+  <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+<% end %> -->
+
+<!-- <% @posts.each do |post| %>
+  <div><%= post.title %></div>
+<% end %> -->
