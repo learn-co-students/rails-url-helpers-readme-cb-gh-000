@@ -1,7 +1,7 @@
 # Rails URL Helpers
 
 Since Rails by design was meant to be flexible, the result is that there are typically a number of ways to accomplish the same features. Routes are a great example for how this principle operates in a Rails app. In this section we will review how to leverage built-in URL helper methods instead of hard coding route paths into an application (along with why this is a good idea).
-
+i
 
 ## Paths vs Route Helpers
 
