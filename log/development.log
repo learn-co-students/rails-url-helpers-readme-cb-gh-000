@@ -9,3 +9,71 @@ Migrating to CreatePosts (20151230232412)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151230232412"]]
   [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 139.167.191.42 at 2018-07-14 11:17:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (8.2ms)
+Completed 200 OK in 33ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 139.167.191.42 at 2018-07-14 11:28:19 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 402ms (Views: 400.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 139.167.191.42 at 2018-07-14 11:28:20 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 139.167.191.42 at 2018-07-14 11:28:20 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 139.167.191.42 at 2018-07-14 11:28:20 +0000
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 139.167.191.42 at 2018-07-14 11:28:20 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 139.167.191.42 at 2018-07-14 11:28:20 +0000
+
+
+Started GET "/posts/ew" for 139.167.191.42 at 2018-07-14 11:28:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"ew"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=ew):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+
+
+Started GET "/posts/new" for 139.167.191.42 at 2018-07-14 11:28:35 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=new):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.1ms)
+
+
+Started GET "/posts" for 139.167.191.42 at 2018-07-14 11:28:42 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
